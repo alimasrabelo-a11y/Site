@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+</head>
+<body>
+<h1>Calculadora</h1>
+
+<label for="number1">Digite um número:</label>
+<input type="number" id="number1"><br><br>
+
+<label for="number2">Digite outro número:</label>
+<input type="number" id="number2"><br><br>
+
+<p>Escolha a operação desejada:</p>
+<button onclick="calcular(1)">Soma</button>
+<button onclick="calcular(2)">Subtração</button>
+<button onclick="calcular(3)">Multiplicação</button>
+<button onclick="calcular(999)">Forçar Erro</button> <!-- Botão de erro -->
+
+<h2>Resultado:</h2>
+<p id="resultado"></p>
+
+<script>
+  function calcular(choice) {
+    const number = parseInt(document.getElementById("number1").value);
+    const number2 = parseInt(document.getElementById("number2").value);
+    let resultado;
+
+    if (choice === 1) {
+      resultado = number + number2;
+    } else if (choice === 2) {
+      resultado = number - number2;
+    } else if (choice === 3) {
+      resultado = number * number2;
+    } else {
+      resultado = "Esse sistema apenas aceita números inteiros ERRO";
+    }
+
+    document.getElementById("resultado").innerText = resultado;
+  }
+</script>
+</body>
+</html>
